@@ -1,0 +1,54 @@
+#fundo {
+    background-image: url(img/quest.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.box {
+    box-shadow: 0 0 1em red;
+    border-radius: 24px;
+    padding: 10%;
+    margin: 30px;
+    background-color: rgba(165, 42, 42, 0.182);
+    text-align: center;
+    color: #fff;
+}
+
+.itens {
+    display: flex;
+    color: #ffffff;
+}
+
+.box img {
+    width: 100px;
+}
+
+h1 {
+    font-size: 54px;
+    font-family: 'Rubik Wet Paint', cursive;
+    color: #bb0000;
+    text-shadow: 0 0 1em black;
+}
+
+.button {
+    border: solid 1px #bb0000;
+    background-color: #cc000067;
+    font-family: 'Rubik Wet Paint', cursive;
+    color: white;
+    font-size: 24px;
+    border-radius: 16px;
+    padding: 10px 30px;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #ffffff;
+    color: #bb0000;
+}
+
+.intext {
+    border-radius: 10px;
+    padding: 10px;
+    width: 30%;
+}

@@ -1,0 +1,62 @@
+:root {
+  --color-azul-bebe: #74969d;
+  --color-preto: #000;
+  --color-azul-escuro: #001136;
+  --color-azul-medio: #102142;
+  --color-azul-medio-apagado: rgba(16, 33, 66, 0.6);
+  --color-azul-claro: #244458;
+  --color-branco: #f0f8ff;
+}
+body {
+  height: 100vh;
+  background: linear-gradient(to top left, #d6e6ff, #e5ebf8);
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* ---------------------------------------------------------------------------------------MENU---------------------------------------------------------------------------------- */
+
+header img {
+  width: 100px;
+}
+header {
+  width: 100%;
+}
+.menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 14vh;
+}
+nav ul {
+  width: 40rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+nav ul li a {
+  text-decoration: none;
+  color: var(--color-azul-medio);
+  font-size: 20px;
+  padding: 0 10px;
+}
+nav ul li a:hover {
+  border-top: 3px solid var(--color-azul-bebe);
+}
+.new {
+  font-weight: 1000;
+  border-top: 3px solid var(--color-azul-bebe);
+}
+
+/* ---------------------------------------------------------------------FOOTER------------------------------------------------------------------- */
+
+.container_footer {
+  width: 100%;
+  display: flex;
+  font-size: 20px;
+  font-weight: 800;
+  justify-content: center;
+  background-color: var(--color-azul-claro);
+  color: var(--color-branco);
+}

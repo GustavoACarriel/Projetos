@@ -1,0 +1,101 @@
+* {
+    /* DEFINIR QUE A PAGINA TENHA NENHUMA MARGIN E NENHUM PADDING, SEM BORDAS, SEM DECORAÇÕES DE TEXTO TBM, MAS  RESUMINDO É RESETAR AS CONFIGURAÇÕES PRE DEFINIDAS DO NAVEGADOR */
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+body{
+    background: url("img/Fundo.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+.container_all{
+    width: 100%;
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 10vh 1fr;
+    grid-template-areas: 'header header' 
+    'left right';
+}
+header{
+    grid-area: header;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur( 20px );   /* SERVE PARA DAR UMA CARA DE EMBAÇADO OU EFEITO GLASS */
+    -webkit-backdrop-filter: blur( 20px );
+    border-bottom: 2px solid white;
+}
+header h1{
+    font-family: 'Permanent Marker', cursive;
+    color: white;
+    font-weight: 100;
+    font-size: 40px;
+    letter-spacing: 2px;
+    font-style: italic;
+    padding: 8rem;
+}
+header .image img{
+    height: 35px;
+    margin: .7rem;
+}
+header .image{
+    display: flex;
+    width: 15rem;
+    margin-right: 5%;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: width 2s;
+    /* border: 2px solid #ff0043; */
+}
+header .image a:hover{
+    background-color: #bebebe;
+    border-radius: 40px;
+}
+.sct_dialogo{
+    grid-area: left;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    width: 90%;
+    height: 80vh;
+    margin: 5vh 5%;
+    backdrop-filter: blur( 50px );   /* SERVE PARA DAR UMA CARA DE EMBAÇADO OU EFEITO GLASS */
+    -webkit-backdrop-filter: blur( 50px );
+    box-shadow: 0 0 10px #bebebe;
+}
+.sct_palpite{
+    grid-area: right;
+    border: 3px solid white;
+    box-shadow: 0 0 10px #bebebe;
+    border-radius: 20px;
+    height: 80vh;
+    width: 90%;
+    margin: 5vh 5%;
+    display: flex;
+}
+.suspeitos{
+    background-color: #60070c;
+    height: 100%;
+    width: 50%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.inocentes{
+    background-color: #17521e;
+    height: 100%;
+    width: 50%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.div_personagem{
+    display: flex;
+    margin: 5% 0;
+    justify-content: center;
+}
+.div_personagem img{
+    height: 100px;
+}

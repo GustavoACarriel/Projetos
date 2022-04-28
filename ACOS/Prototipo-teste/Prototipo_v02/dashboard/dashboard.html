@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Acos</title>
+    <!-- link css -->
+    <link rel="stylesheet" href="../dashboard/style.css">
+    <!-- icones -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!-- chart js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="../js/funcoes.js"></script>
+</head>
+
+<body onload="validarSessao(), atualizarFeed()">
+    <aside class="sidebar">
+        <div class="logo_content">
+            <div class="logo">
+                <img src="../img/Logos ACOS/LOGO_white.png" alt="" height="35px">
+                <div class="logo_name">Acos</div>
+            </div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="navlist">
+            <li>
+                <a href="../dashboard/dashboard.html">
+                    <i class='bx bxs-dashboard'></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-truck'></i>
+                    <span class="links_name">Caminhões</span>
+                </a>
+                <span class="tooltip">Caminhões</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-history'></i>
+                    <span class="links_name">Histórico</span>
+                </a>
+                <span class="tooltip">Histórico</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-pie-chart-alt-2'></i>
+                    <span class="links_name">Analytics</span>
+                </a>
+                <span class="tooltip">Analytics</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-chat'></i>
+                    <span class="links_name">Reportar</span>
+                </a>
+                <span class="tooltip">Reportar</span>
+            </li>
+        </ul>
+        <div class="profile_content">
+            <div class="profile">
+                <div class="profile_details">
+                    <img src="../img/6061bd47-2818-4f2b-b04a-5a9ddb6f6467.png" alt="">
+                    <div class="name_job">
+                        <div class="name">Gustavo Almeida Carriel</div>
+                        <div class="job">Full-Stack</div>
+                    </div>
+                </div>
+                <i class='bx bx-log-out' id="log_out" onclick="limparSessao()"></i>
+            </div>
+        </div>
+    </aside>
+    <main>
+        <div class="text">Monitoramento</div>
+        <section class="section1">
+            <div class="card">
+                <div>
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                    <canvas id="myChart2"></canvas>
+                </div>
+            </div>
+            <div class="card">
+                <small>Média de Temperatura (2021 - 2020)</small>
+                <div>
+                    <canvas id="myChart3"></canvas>
+                </div>
+            </div>
+        </section>
+        <section class="section2">
+            <div class="card2">
+                <div class="text">Caminhões em Rota</div>
+                <table class="tabela">
+                    <tr>
+                        <td>Marca</td>
+                        <td>Caminhão</td>
+                        <td>Palaca</td>
+                        <td>Rota</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#"><img src="../img/mercedes.png" alt=""> Mercedes-Benz</a></td>
+                        <td>Caminhão 1</td>
+                        <td>NAM-5729</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#"><img src="../img/scania.png" alt=""> Scania</a></td>
+                        <td>Caminhão 2</td>
+                        <td>NES-6760</td>
+                        <td>06</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#"><img src="../img/volks.png" alt=""> Volkswagen</a></td>
+                        <td>Caminhão 3</td>
+                        <td>MZZ-3517</td>
+                        <td>54</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#"><img src="../img/mercedes.png" alt=""> Mercedes-Benz</a></td>
+                        <td>Caminhão 4</td>
+                        <td>MZY-5859</td>
+                        <td>77</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#"><img src="../img/volvo.svg" alt=""> Volvo</a></td>
+                        <td>Caminhão 5</td>
+                        <td>NEO-3535</td>
+                        <td>98</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#"><img src="../img/volks.png" alt=""> Volkswagen</a></td>
+                        <td>Caminhão 6</td>
+                        <td>MST-8160</td>
+                        <td>96</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#"><img src="../img/scania.png" alt=""> Volkswagen</a></td>
+                        <td>Caminhão 7</td>
+                        <td>HWQ-5640</td>
+                        <td>16</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#"><img src="../img/volvo.svg" alt=""> Volkswagen</a></td>
+                        <td>Caminhão 8</td>
+                        <td>MAJ-6989</td>
+                        <td>96</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="card2">
+                <div class="text">Lucro por mês</div>
+                <div>
+                    <canvas id="myChart4"></canvas>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
+
+<script>
+
+    let proximaAtualizacao;
+
+    window.onload = obterDadosGrafico(1);
+
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    //verificar_autenticacao();
+
+    // altere aqui como os dados serão exibidos
+    // e como são recuperados do BackEnd
+    function obterDadosGrafico(idAquario) {
+        if (proximaAtualizacao != undefined) {
+            clearTimeout(proximaAtualizacao);
+        }
+
+        fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta, idAquario);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+    }
+
+    // só altere aqui se souber o que está fazendo!
+    function plotarGrafico(resposta, idAquario) {
+        console.log('iniciando plotagem do gráfico...');
+
+        var dados = {
+            labels: [],
+            datasets: [
+                {
+                    yAxisID: 'y-umidade',
+                    label: 'Umidade',
+                    borderColor: '#32B9CD',
+                    backgroundColor: '#32b9cd8f',
+                    fill: true,
+                    data: []
+                },
+                {
+                    yAxisID: 'y-temperatura',
+                    label: 'Temperatura',
+                    borderColor: '#FFF',
+                    backgroundColor: '#32b9cd8f',
+                    fill: true,
+                    data: []
+                }
+            ]
+        };
+
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            dados.labels.push(registro.momento_grafico);
+            dados.datasets[0].data.push(registro.umidade);
+            dados.datasets[1].data.push(registro.temperatura);
+        }
+
+        console.log(JSON.stringify(dados));
+
+        var ctx = canvas_grafico.getContext('2d');
+        window.grafico_linha = Chart.Line(ctx, {
+            data: dados,
+            //Configurações do gráfico
+            options: {
+                responsive: true,
+                animation: { duration: 500 },
+                hoverMode: 'index',
+                stacked: false,
+                title: {
+                    display: true,
+                    text: 'Histórico recente de umidade/temperatura'
+                },
+                scales: {
+                    yAxes: [{
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        id: 'y-temperatura',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 100,
+                            min: 0
+                        }
+                    }, {
+                        type: 'linear',
+                        display: false,
+                        position: 'right',
+                        id: 'y-umidade',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 100,
+                            min: 0
+                        },
+
+                        gridLines: {
+                            drawOnChartArea: false,
+                        },
+                    }],
+                }
+            }
+        });
+
+        function sendData() {
+			var http = new XMLHttpRequest();
+			http.open('POST', 'http://localhost:3000/api/sendData', false);
+			http.send(null);
+		}
+
+        setInterval(() => {
+			sendData();
+		}, 2000);
+
+        //Atualiza os dados de 5 em 5 segundos
+        setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+    }
+
+    // só mexer se quiser alterar o tempo de atualização
+    // ou se souber o que está fazendo!
+    function atualizarGrafico(idAquario, dados) {
+
+        fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (novoRegistro) {
+
+                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                    console.log(`Dados atuais do gráfico: ${dados}`);
+
+                    // tirando e colocando valores no gráfico
+                    dados.labels.shift(); // apagar o primeiro
+                    dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
+                    dados.datasets[0].data.shift();  // apagar o primeiro de umidade
+                    dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
+                    dados.datasets[1].data.shift();  // apagar o primeiro de umidade
+                    dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de umidade
+
+                    window.grafico_linha.update();
+
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+    }
+</script>
+
+<!-- JS do menu lateral -->
+<script>
+    let btn = document.querySelector("#btn");
+    let sidebar = document.querySelector(".sidebar");
+
+    btn.onclick = function () {
+        sidebar.classList.toggle("active");
+    }
+</script>
+
+<!-- Chart JS com graficos estáticos -->
+<script>
+    const labels = [
+        'Jan',
+        'Fev',
+        'Mar',
+        'Abr',
+        'Mai',
+        'Jun',
+        'Jul',
+        'Ago',
+        'Set',
+        'Out',
+        'Nov',
+        'Dez',
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: ' Média Temperatura (2021)',
+            backgroundColor: '#74969d',
+            borderColor: '#102142',
+            data: [16, 15, 14, 15, 20, 25, 20, 25, 17, 18, 20 ,25],
+        }]
+    };
+    const data2 = {
+        labels: labels,
+        datasets: [{
+            label: ' Média Umidade (2021)',
+            backgroundColor: '#102142',
+            borderColor: '#74969d',
+            data: [3+10, 5+10, 10+10, 15+10, 20-10, 25-10, 20-10, 15+10, 40-20, 35-20, 50-30 ,55-30],
+        }]
+    };
+    const data3 = {
+  labels: [
+    'Outono',
+    'Inverno',
+    'Primavera',
+    'Verâo'
+  ],
+  datasets: [{
+    label: 'Média de Temperatura (2021 - 2020)',
+    data: [300, 50, 100, 49],
+    backgroundColor: [
+      'rgb(255, 99, 132)',
+      'rgb(54, 162, 235)',
+      'rgb(255, 205, 86)',
+      'rgb(255, 0, 0)'
+    ],
+    hoverOffset: 4
+  }]
+};
+const data4 = {
+  labels: [
+        'Jan',
+        'Fev',
+        'Mar',
+        'Abr',
+        'Mai',
+        'Jun',
+        'Jul',
+        'Ago',
+        'Set',
+        'Out',
+        'Nov',
+        'Dez',
+  ],
+  datasets: [{
+    label: 'Faturamento',
+    data: [300, 500, 1000, 1300, 1400, 1800, 2000, 2500, 2450, 2400, 2600, 2800, 3000],
+    backgroundColor: [
+      'red',
+      'green',
+      'blue',
+      'black',
+      'orange',
+      'grey',
+      'greenyellow',
+      'aqua',
+      'brown',
+      'darkmagenta',
+      'goldenrod',
+      'hotpink'
+    ],
+    hoverOffset: 4
+  }]
+};
+
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+    };
+    const config2 = {
+        type: 'line',
+        data: data2,
+        options: {}
+    };
+    const config3 = {
+        type: 'doughnut',
+        data: data3,
+        options: {}
+    };
+    const config4 = {
+  type: 'pie',
+  data: data4,
+};
+</script>
+<script>
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+    const myChart2 = new Chart(
+        document.getElementById('myChart2'),
+        config2
+    );
+    const myChart3 = new Chart(
+        document.getElementById('myChart3'),
+        config3
+    );
+    const myChart4 = new Chart(
+        document.getElementById('myChart4'),
+        config4
+    );
+
+</script>

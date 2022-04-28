@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.titulo{
+  width: 40rem;
+  margin: auto;
+  backdrop-filter: blur( 50px );   /* SERVE PARA DAR UMA CARA DE EMBAÇADO OU EFEITO GLASS */
+  -webkit-backdrop-filter: blur( 50px );
+  padding: 10px;
+  border-radius: 20px;
+}
+.titulo h1 {
+  color: #fff;
+  font-size: 4rem;
+}
+header{
+  background-image: url("img/rain-drops-on-glass-textured.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 108vh;
+  position: relative;
+}
+.menu{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 8vh;
+  backdrop-filter: blur( 10px );   /* SERVE PARA DAR UMA CARA DE EMBAÇADO OU EFEITO GLASS */
+  -webkit-backdrop-filter: blur( 10px );
+}
+ .menu h1{
+  color: #191970;
+  font-size: 50px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+nav ul{
+  width: 100%;
+  display: flex;
+  width: 40rem;
+  justify-content: space-evenly;
+  list-style: none;
+}
+nav ul li a{
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+nav ul li a:hover{
+  border-top: 3px solid #191970;
+  opacity: .7;
+  transition: 0.2s;
+}
+.banner {
+  height: 90%;
+  display: flex;
+  align-items: center;
+}
+.waves {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.new{
+  font-weight: 800;
+  color: azure;
+}
+.barra{
+  color: #191970;
+}
+
+/* -----------------------------------------------------------------FIM DO HEADER-------------------------------------------------------------- */
+
+.mvv{
+  padding-top: 2%;
+  width: 100%;
+  background-color: #b1b4b9;
+  display: flex;
+  justify-content: space-evenly;
+}
+.box{
+  width: 22rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5%;
+  text-align: center;
+
+}
+.box div{
+  display: flex;
+  justify-content: center;
+  margin: 0 0 5% 0;
+}
+.box hr{
+  border: 1px solid white;
+  margin-bottom: 5%;
+}
+.box h1{
+  font-size: 30px;
+  margin: 5% 0;
+}
+.box h2{
+  font-size: 25px;
+  font-weight: 600;
+}
+
+/* -----------------------------------------------------------------FIM DA SECTION 1-------------------------------------------------------------- */
+
+.caminhao{
+  background-image: url("img/caminhao.jpeg");
+  height: 65rem;
+  background-size: cover;
+}
+.waves-1{
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.textos-caminhao{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.caminhao h1{
+  color: white;
+  font-size: 60px;
+  width: 90rem;
+  font-weight: 1000;
+  text-align: center;
+  margin: auto;
+ /*  backdrop-filter: blur( 50px );   /* SERVE PARA DAR UMA CARA DE EMBAÇADO OU EFEITO GLASS 
+  -webkit-backdrop-filter: blur( 50px );
+  border-radius: 50px;
+  padding: 10px; */
+}
+.caminhao h2{
+  color: #fff;
+  font-weight: 700;
+  width: 45rem;
+  text-align: center;
+  margin: auto;
+  backdrop-filter: blur( 50px );   /* SERVE PARA DAR UMA CARA DE EMBAÇADO OU EFEITO GLASS */
+  -webkit-backdrop-filter: blur( 50px );
+  border-radius: 15px;
+  padding: 10px;
+}
+.caminhao span{
+  color: darkblue;
+  font-weight: 1000;
+  font-style: italic;
+  font-size: 30px;
+}
+.caminhao .txt{
+  margin-bottom: 2rem;
+  top: 0;
+  text-align: center;
+}
+.caminhao .txt a{
+  background-color: #191970;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 30px;
+  text-decoration: none;
+  font-weight: bolder;
+}
+.caminhao .txt a:hover{
+  box-shadow: 0 0 50px #1919709d;
+}
+
+/* -----------------------------------------------------------------FIM DA SECTION 2-------------------------------------------------------------- */
+
+footer{
+  background-color: #191970;
+  height: 500px;
+  box-shadow: 0 0 5px #b1b4b9;
+  padding: 2%;
+}
+footer h1{
+  text-align: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 70px;
+  text-transform: uppercase;
+  margin-bottom: 3% ;
+}
+.container-footer{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  color: #fff;
+}
+.container-footer h2{
+  font-size: 30px;
+  margin: 5% 0;
+}
+.container-footer .box-1{
+  left: 0;
+}
+.container-footer .box-2{
+  display: inline-flex;
+}
+.container-footer .box-1 div{
+  font-size: 25px;
+}
+.container-footer .box-2 div{
+  margin: 15px;
+}
+.container-footer span{
+  font-weight: 900;
+}
+.container-footer img{
+  height: 50px;
+}

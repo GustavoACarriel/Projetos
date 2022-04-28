@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <main>
+        <h1>Cadastro</h1>
+        <div class="container">
+            <div class="box">
+                <form action="#">
+                    <h4>Usuário</h4>
+                    <input type="text" id="usuario" autofocus pattern="/^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$/igm">
+                    <h4>Email</h4>
+                    <input type="email" id="email">
+                    <h4>Senha</h4>
+                    <div>
+                        <input type="password" id="senha" >
+                        <img src="olho-branco.svg" alt="" onclick="mostrar()" id="image" width="20px">
+                    </div>
+                    <h4>Confirmação de Senha</h4>
+                    <div>
+                        <input type="password" id="confirmar" >
+                        <img src="olho-branco.svg" alt="" onclick="mostrarConfirme()" id="image" width="20px">
+                    </div>
+                    <button onclick="cadastrar()">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+        <div class="cad-log">
+            <div>
+                <h3>Ja possui Cadastro?</h3>
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
+<script src="mostrar-senha.js"></script>
+<script src="verificar-senhas.js"></script>

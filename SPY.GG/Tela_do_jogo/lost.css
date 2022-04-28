@@ -1,0 +1,44 @@
+#fundo {
+    background-image: url(img/youLost.jpg);
+    background-size: cover;
+}
+
+.box {
+    border-radius: 24px;
+    background-color: rgba(165, 42, 42, 0.182);
+    padding: 10%;
+    margin: 30px;
+    box-shadow: 0 0 1em red;
+    text-align: center;
+}
+
+h1 {
+    font-size: 54px;
+    font-family: 'Rubik Wet Paint', cursive;
+    color: #bb0000;
+    text-shadow: 0 0 1em black;
+}
+
+p {
+    font-size: 24px;
+    font-family: 'Rubik Wet Paint', cursive;
+    color: #bb0000;
+    text-shadow: 0 0 1em black;
+}
+
+a {
+    border: solid 1px #bb0000;
+    background-color: #cc000067;
+    font-family: 'Rubik Wet Paint', cursive;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    border-radius: 16px;
+    padding: 10px 40px;
+    cursor: pointer;
+}
+
+a:hover {
+    background-color: white;
+    color: red;
+}

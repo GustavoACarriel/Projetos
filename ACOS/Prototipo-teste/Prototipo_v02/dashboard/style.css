@@ -1,0 +1,311 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(to top left, #d6e6ff, #e5ebf8);
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 78px;
+    background: linear-gradient(to top, #102142, #244458);
+    padding: 6px 14px;
+    transition: all 0.5s ease;
+}
+.sidebar.active{
+    width: 300px;
+    padding: 6px 5px 6px 14px;
+}
+.sidebar .logo_content .logo{
+    color: #74969d;
+    font-size: 50px;
+    font-weight: 700;
+    font-style: italic;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2 s ease;
+}
+.sidebar.active .logo_content .logo{
+    opacity: 1;
+    pointer-events: none;
+}
+.logo_content .logo i{
+    font-size: 28px;
+    margin-right: 5px;
+}
+.sidebar #btn{
+    position: absolute;
+    color: white;
+    left: 50%;
+    top: 6px;
+    font-size: 25px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+.sidebar #btn:hover{
+    opacity: .7;
+}
+.sidebar.active #btn{
+    left: 90%;
+}
+.sidebar ul{
+    margin-top: 50px;
+}
+.sidebar ul li{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0 5px;
+    list-style: none;
+    line-height: 50px;
+}
+.sidebar ul li .tooltip{
+    position: absolute;
+    height: 20px;
+    top: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 6px;
+    left: 122px;
+    width: 90px;
+    background: rgb(240, 248, 255, .3);
+    line-height: 20px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgb(31, 48, 82, 1);
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+    font-size: 14px;
+}.sidebar.active ul li .tooltip{
+    display: none;
+}
+.sidebar ul li:hover .tooltip{
+    transition: all 1s ease;
+    opacity: .7;
+    top: 30%;
+}
+.sidebar ul li a{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all .2s ease;
+    border-radius: 15px;
+    white-space: nowrap;
+}
+.sidebar ul li a:hover{
+    background: #fff;
+    color: #244458;
+}
+.sidebar ul li a i{
+    height: 50px;
+    font-size: 20px;
+    min-width: 50px;
+    border-radius: 15px;
+    line-height: 50px;
+    text-align: center;
+}
+.sidebar .links_name{
+    opacity: 0;
+    pointer-events: none;
+    transition: all .5s ease;
+}
+.sidebar.active .links_name{
+    opacity: 1;
+    pointer-events: auto;
+}
+.sidebar .profile_content{
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.sidebar .profile_content .profile{
+    position: relative;
+    padding: 20px 6px;
+    height: 80px;
+    background: none;
+    transition: all .5s ease;
+}
+.sidebar.active .profile_content .profile{
+    background: rgb(31, 48, 82);
+}
+.profile_content .profile .profile_details{
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+.sidebar.active .profile .profile_details{
+    opacity: 1;
+    pointer-events: auto;
+}
+.profile .profile_details img{
+    height: 45px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+.profile .profile_details .name_job{
+    margin-left: 10px;
+}
+.profile .profile_details .name{
+    font-size: 15px;
+    word-wrap: break-word;
+    width: 150px;
+    font-weight: 400px;
+}
+.sidebar.active .profile .profile_details .name{
+    word-wrap: break-word;
+}
+.profile .profile_details .job{
+    font-size: 12px;
+    font-weight: 400px;
+}
+.profile #log_out{
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    transform: translateX(-50%);
+    min-width: 50px;
+    line-height: 70px;
+    font-size: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all .5s ease;
+    background: rgb(31, 48, 82);
+}
+.sidebar.active .profile #log_out{
+    left: 88%;
+    background: none;
+}
+main{
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 78px);
+    left: 78px;
+    transition: all 0.5s ease;
+}
+main .text{
+    font-size: 25px;
+    font-weight: 500px;
+    color: #102142;
+    margin: 10px;
+}
+.sidebar.active ~ main{
+    width: calc(100% - 300px);
+    left: 300px;
+}
+
+/* ----------------------------------------------------------------------Fim do menu lateral/aside------------------------------------------------------------------ */
+
+
+/* --------------------------------------------------------------------Chart JS e outro elementos do main---------------------------------------------------------- */
+.section1{
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.card{
+    background: linear-gradient(to top left, #d6e6ff, #e5ebf8);
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.5);
+    text-align: center;
+}
+.section1 #myChart, #myChart2{
+    position: relative;
+    width: 30vw;
+}
+#myChart3{
+    position: relative;
+    width: 5vw;
+}
+.section1 .card small{
+    color: #102142;
+    margin: 5px;
+}
+.section2{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.tabela{
+    position: relative;
+    width: 60vw;
+    margin-bottom: 50px;
+    padding: 10px;
+}
+.tabela tr{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #102142;
+}
+.tabela tr:nth-child(even){
+    background-color: #92adb2;
+}
+.tabela tr td a img{
+    height: 20px;
+}
+.tabela tr td{
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+}
+.tabela tr td a{
+    text-decoration: none;
+    color: #102142;
+}
+.tabela tr td a:hover{
+    color: #48686e;
+}
+.section2 .receita{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.section2 .receita img{
+    width: 100px;
+    padding: 10px;
+    border-radius: 30px;
+    background-color: greenyellow;
+}
+.section2 .receita .lucro{
+    color: green;
+    font-size: 30px;
+}
+.card2{
+    background: linear-gradient(to top left, #d6e6ff, #e5ebf8);
+    border-radius: 20px;
+    padding: 10px;
+    min-width: 20%;
+    height: 100%;
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.5);
+    text-align: center;
+}
+#myChart4{
+    position: relative;
+    width: 5vh;
+}
