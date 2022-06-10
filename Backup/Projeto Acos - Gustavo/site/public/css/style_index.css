@@ -1,0 +1,394 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background-color: #dde7fc;
+}
+
+/*Seção home*/
+
+#home{
+    width: 100%;
+    height: 115vh;
+    display: flex;
+    align-items: center;
+}
+#home_elementos{
+    width: 100%;
+    height: 55%;
+    display: flex;
+    justify-content: space-around;
+}
+#home_logo{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+#home_logo img{
+    animation: flutuar 2s infinite alternate;
+    max-height: 95%;
+}
+@keyframes flutuar {
+    from{
+        transform: translateY(15px);        
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+#home_texto{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    color: #001136;
+    align-items: center;
+}
+#home_texto p{
+    font-size: calc(1.5em + 1vw);
+    font-weight: 500;
+    text-align: center;
+}
+#home_texto h1{
+    font-size: calc(0.5em + 1vw);
+}
+
+
+
+
+/*Botão da tela home para simulador financeiro*/
+#btn_simular {
+    padding: 0.8em;
+    border: 1px solid #4f4f4f;
+    border-radius: 50px;
+    transition: all 0.2s ease-in;
+    position: relative;
+    overflow: hidden;
+    font-size: 16px;
+    color: black;
+    z-index: 1;
+    background-color: transparent;
+    margin-top: 2%;
+}
+#btn_simular:after {
+    content: "";
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.45);
+    top: 180%;
+    width: 160%;
+    height: 190%;
+    background-color: #001136;
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+}
+#btn_simular:hover {
+    color: #ffffff;
+    border: 1px solid #001136;
+    cursor: pointer;
+}
+#btn_simular:hover:after {
+    top: -45%;
+    background-color: #001136;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+
+/*Seção missão, visão valores e integrantes*/
+#sobre{
+    width: 100%;
+    height: 120vh;
+    display: flex;
+    flex-direction: column; 
+    margin-top: -5%;
+    align-items: center;
+}
+#sobre #mvv{
+    width: 100%;
+    height: 45%;
+    background-image: url(../assets/imgs/ondas.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#sobre #mvv hr{
+    width: 100%;
+}
+#sobre #missao,#visao,#valores{
+    width: 15%;
+    height: 45%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-align: justify;
+}
+#missao,#visao,#valores h3{
+    font-size: calc(0.4em + 1vw);
+}
+#missao,#visao,#valores p{
+    font-size: calc(0.2em + 1vw);
+}
+#mvv img{
+    animation: flutuar 2s infinite alternate;
+}
+#integrantes{
+    width: 90%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.container_card_integrantes{
+    width: 90%;
+    height: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.card_integrantes {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    height: 100%;
+    width: 14%;
+    background-color: #fff;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+#img_integrantes{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    position: relative;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+/* .img_card_um{
+    background-image: url(/image/integrantes/B.jpg);
+}
+.img_card_dois{
+    background-image: url(/image/integrantes/F.jpg);
+}
+.img_card_tres{
+    background-image: url(/image/integrantes/G.jpg);
+}
+.img_card_quatro{
+    background-image: url(/image/integrantes/V.jpg);
+}
+.img_card_cinco{
+    background-image: url(/image/integrantes/VC.jpg);
+}
+.img_card_seis{
+    background-image: url(/image/integrantes/W.jpg);
+} */
+.card_integrantes:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
+}
+.card_text_integrantes {
+    height: 50%;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.card_text_integrantes p{
+    text-align: justify;
+    font-size: calc(0.1em + 1vw);
+    margin-bottom: 5%;
+}
+.card_text_integrantes h4{
+    font-size: calc(0.2em + 1vw);
+    margin-bottom: 5%;
+}
+.card_text_integrantes img{
+    margin-top: 5%;
+    width: 20%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SIMULADOR*/
+#simulador_financeiro{
+    width: 100%;
+    min-height: 110vh;
+}
+.card_text_simulador{
+    width: 45%;
+    border-radius: 30px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 3%;
+    text-align: justify;
+}
+.card_text_simulador hr{
+    border-color: #001136;
+    width: 50%;
+}
+.card_text_simulador h1{
+    font-size: calc(0.5em + 1vw);
+}
+.card_text_simulador p{
+    font-size: calc(0.5em + 1vw);
+}
+.card_form_simulador {
+    width: 50%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    margin-bottom: 3%;
+}
+#div_2{
+    display: none;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    width: 75%;
+}
+.formulario_simulador{
+    background-color: #fff;
+    width: 90%;
+    height: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-radius: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    color: #001136;
+}
+.formulario_simulador:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+}
+form{
+    width: 90%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.spn_titulo{
+    position: relative;
+    font-size: 27px;
+    font-weight: 600;
+}
+.spn_titulo::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background-color: #001136;
+    border-radius: 25px;
+}
+.input-field {
+    position: relative;
+    height: 40px;
+    width: 80%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+.input-field input {
+    height: 100%;
+    width: 85%;
+    padding: 0 35px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 2px solid #ccc;
+    border-top: transparent 2px solid;
+    transition: all 0.7s ease;
+}
+.input-field input:is(:focus,:valid){
+    border-bottom-color:#001136;
+}
+.input-field i {
+    position: absolute;
+    top: 20%;
+    margin-left: -94%;
+    color: #74969D;
+    font-size: 23px;
+}
+.input-field input:is(:focus, :valid) ~ i {
+    color: #001136;
+}
+.input-field i.icon {
+    left: 5%;
+}
+.input-field .btn{
+    border: none;
+}
+.logo img{
+    width: 100px;
+    float: left;
+    padding-left: 5%;
+    padding-top: 2%;
+}
+
+nav {
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-around;
+
+}
+h1, a {
+    color: #001136;
+    text-decoration: none;
+    font-weight: 600;
+}
+nav ul {
+    align-items: center;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+
+
+}
+li {
+    padding: 0 25px;
+}
+li:hover, .h1:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}

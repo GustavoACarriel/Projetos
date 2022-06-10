@@ -5,28 +5,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/funcoes.js"></script>
     <title>Cadastro</title>
 </head>
 
 <body>
     <main>
         <h1>Cadastro</h1>
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
         <div class="container">
             <div class="box">
                 <form action="#">
                     <h4>Usuário</h4>
-                    <input type="text" id="usuario" autofocus pattern="/^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$/igm">
+                    <input type="text" id="usuario_input" autofocus pattern="/^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$/igm">
                     <h4>Email</h4>
-                    <input type="email" id="email">
+                    <input type="email" id="email_input">
                     <h4>Senha</h4>
                     <div>
-                        <input type="password" id="senha" >
+                        <input type="password" id="senha_input" >
                         <img src="olho-branco.svg" alt="" onclick="mostrar()" id="image" width="20px">
                     </div>
                     <h4>Confirmação de Senha</h4>
                     <div>
-                        <input type="password" id="confirmar" >
+                        <input type="password" id="confirmacao_senha_input" >
                         <img src="olho-branco.svg" alt="" onclick="mostrarConfirme()" id="image" width="20px">
                     </div>
                     <button onclick="cadastrar()">Cadastrar</button>
@@ -39,9 +45,81 @@
                 <a href="login.html">Login</a>
             </div>
         </div>
+        <div id="div_aguardar" class="loading-div">
+            <img src="./assets/circle-loading.gif" id="loading-gif">
+        </div>
+        <div id="div_erros_login">
+
+        </div>
     </main>
 </body>
 
 </html>
 <script src="mostrar-senha.js"></script>
 <script src="verificar-senhas.js"></script>
+<script>
+    function cadastrar() {
+        aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = usuario_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+                
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
