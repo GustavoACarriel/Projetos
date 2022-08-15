@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="sobre.css">
+    <title>Sobre nós</title>
+</head>
+<body>
+    <header>
+        <img src="" alt="">
+        <nav>
+            <ul>
+                <img src="./assets/logof.png" alt="">
+                <li><a href="#Explore">Explore</a></li>
+				<li><span>|</span></li>
+				<li><a href="#Histórias">Histórias</a></li>
+				<li><span>|</span></li>
+				<li><a href="#Sobre Nós">Sobre Nós</a></li>
+                <i class='bx bxl-facebook-square'></i>
+				<i class='bx bxl-instagram-alt'></i>
+				<i class='bx bxl-linkedin-square'></i>
+				<i class='bx bxl-twitter'></i>
+            </ul>
+        </nav>
+    </header>
+    <div class="tudo">
+        <div class="dev">
+            <h2>Programadores</h2>
+            <ul>
+                <li>Gustavo Almeida Carriel</li>
+                <li>Sarah Elisa Salvina Neri</li>
+                <li>Yasmin Saboia Almeida</li>
+                <li>Gabriel Yukio Mibe Coca</li>
+                <li>Paula Maria Pires</li>
+            </ul>
+        </div>
+        <div class="img-slider">
+            <div class="slide active">
+                <img src="./assets/Foto 1.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="./assets/Foto 2.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="./assets/IMG-20211206-WA0092.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="./assets/IMG_20220224_211645.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="./assets/IMG_20220224_211650.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="./assets/IMG_20220224_211702.jpg" alt="">
+            </div>
+            <div class="navigation">
+                <div class="btn active"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+            </div>
+        </div>
+    </div>
+    <div class="sobre-nos">
+        <p>Afinal, quem somos?
+            Somos uma equipe de profissionais em T.I e cada um colabora da melhor maneira para que
+            o jogo pudesse acontecer!
+            Nosso intuito foi sair da nossa zona de conforto, pois estávamos acostumados apenas com
+            sites, formulários ou coisas mais simples, mas nos colocamos a risco, e todos se ajudaram
+            bastante porque somos uma equipe bem unida e disposta a ajudar :)</p>
+            <h1>Porque um jogo de mistério?</h1>
+            <p>A escolha do tema foi mais por gosto pessoal do grupo em si, e foi inspirado em várias
+                séries de mistério.</p>
+            <h1>Sobre a equipe</h1>
+            <p>Prezamos muito pelo trabalho em equipe, pois ele é essencial para nossa empresa. Somos
+                muito unidos e conseguimos sempre passar por cima das dificuldades que aparecem em
+                nosso caminho.
+                Para trabalhar em equipe precisamos ter empatia, transparência, solidariedade e muita
+                lealdade, esses ingredientes são necessários para o sucesso em grupo.Paulo França
+                Estamos trabalhando juntos a 1 ano e 5 meses. No primeiro projeto que realizamos tivemos
+                muitas dificuldades de comunicação e etc, mas depois de realizarmos nosso segundo
+                projeto juntos, enfrentamos as dificuldades com muita calma, pois já sabíamos o que cada
+                um podia dar de si! Achamos extremamente importante ter harmonia e parceria em uma
+                empresa ou em algum projeto porque isso facilita e nos faz entender que tudo em equipe
+                pode ser feito com muito zelo, dedicação e parceria.
+                E hoje mais um ciclo se encerra para nós e chegamos aqui depois depois de muita
+                dificuldades, e depois de pensarmos várias vezes que poderia não dar certo mas deu,
+                porque fizemos acontecer!</p>
+    </div>
+    <footer>
+        <p>Desenvolvido por SPY.GG &copy;</p>
+    </footer>
+</body>
+</html>
+<script>
+    var slides = document.querySelectorAll('.slide');
+    var btns = document.querySelectorAll('.btn');
+    let currentSlide = 1;
+
+    // Javascript for image slider manual navigation
+    var manualNav = function(manual){
+      slides.forEach((slide) => {
+        slide.classList.remove('active');
+
+        btns.forEach((btn) => {
+          btn.classList.remove('active');
+        });
+      });
+
+      slides[manual].classList.add('active');
+      btns[manual].classList.add('active');
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        manualNav(i);
+        currentSlide = i;
+      });
+    });
+
+    // Javascript for image slider autoplay navigation
+    var repeat = function(activeClass){
+      let active = document.getElementsByClassName('active');
+      let i = 1;
+
+      var repeater = () => {
+        setTimeout(function(){
+          [...active].forEach((activeSlide) => {
+            activeSlide.classList.remove('active');
+          });
+
+        slides[i].classList.add('active');
+        btns[i].classList.add('active');
+        i++;
+
+        if(slides.length == i){
+          i = 0;
+        }
+        if(i >= slides.length){
+          return;
+        }
+        repeater();
+      }, 5000);
+      }
+      repeater();
+    }
+    repeat();
+    </script>
+
